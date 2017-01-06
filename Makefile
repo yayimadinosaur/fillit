@@ -6,7 +6,7 @@
 #    By: wfung <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/04 18:33:10 by wfung             #+#    #+#              #
-#    Updated: 2017/01/04 18:55:30 by wfung            ###   ########.fr        #
+#    Updated: 2017/01/05 17:41:11 by wfung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = fillit
 
-SRC = 
+SRC = ./*.c 
 
-OBJS = 
+OBJS = ./*.o
 
-INCL = 
+INCL = ./&.h
 
 all: $(NAME)
 
