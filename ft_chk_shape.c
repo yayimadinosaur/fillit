@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 19:43:47 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/04 20:06:29 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/05 16:42:53 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,21 @@ int		ft_chk_shape(char *str)
 
 	i = 0;
 	j = 0;			//if j == 0 means no shapes; if j >= 1 && <= 26 limit; if j > 27 error
-	while (str[i] != '\0')
+	if (!str)
+		j = 0;
+	while (str[i] != '\0')		//chk does not have a limit to check if input overflow
 	{
 		if (str[i] == '.' || str[i] == '#')		//valid input chk
 			i++;
-		else if (str[i] == '\n' && (i / 5) >= 0 && (i / 5) <= 20)	//4x4 shape chk
+		else if (str[i] == '\n' && (i / 5) >= 1 && (i / 5) <= 26)	//line by line check
 			i++;
-		else if (str[i] == '\n' && i == 21)		//shape counter - every 21 instance
-		{
+		else if (str[i] == '\n' && (i / 21) >= 1 && (i / 21) <= 26)	
+		{			//shape chk/counter - every 21 instance
 			i++;
 			j++;	//shape count++
 		}
 	}
+	if (i > 130 || (i % j) != 0 || j > 26)
+		j = 0;		//wrong argument len; not enough or too many
+	return (j);		//if j == 0 argument has errors; else if j > 0 && <= 26 is correct
 }
