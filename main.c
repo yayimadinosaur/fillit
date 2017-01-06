@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:10:10 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/05 20:31:21 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/06 13:09:55 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,13 @@ int		main(int ac, char **av)
 // 2) pass return values to build_shape? 
 // 			a) if error, print error message + free whatever?<<<<<<
 // 			b) if valid, shape letter; might not need to malloc, just replace chars
-//3)create map
+//
+// 3)match shape
+// 			a)set variations as same
+// 4)create map
 //			a) create all possible solutions
 //			b) select smallest possible upper left square
-//4)print map
-//5)close files? fd?
-//6) free stuff?
-//7)			maybe should be 1) use open for fd
+// 5)print map
+// 6)close files? fd? exit?
+// 7) free stuff?
+// 8)			maybe should be 1) use open for fd
