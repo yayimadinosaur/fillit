@@ -6,26 +6,87 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:10:10 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/06 13:09:55 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/06 19:47:58 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>		//to test print output
 
-int		main(int ac, char **av)
+int		main(void)		//example practice to create square exterior
 {
+	char	k;
+	char	grid[10][10];
+	int 	x = 0;
+	int		y = 0;
+
+	k = 65;
+	while (x < 10)
+	{
+		while (y < 10)
+		{
+			if (y == 0 || y == 9)
+				k = '*';
+			else if (x == 0 || x == 9)
+				k = '$';
+			else if (x == y)
+				k = '#';
+			else
+				k = ' ';
+			grid[x][y] = k;
+			printf("%c", grid[x][y]);
+			y++;
+		}
+		printf("\n");
+		y = 0;
+		x++;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	
+	printf("42 *, 43 +, 44 , 45 -\n");
+	grid[i][j] = '*';
+	grid[i][j + 1] = '!';
+	grid[j + 1][i] = '@';
+	grid[j + 1][i + 1] = '#';
+	while (i < 2 )
+	{
+		while (j < 2)
+		{
+			printf("%c ", grid[i][j]);
+			j++;
+		}
+		j = 0;
+		printf("\n");
+		i++;
+	}
+*/
+
+	/*
 	if (ac == 2)
 	{
 		ft_putstr(ft_shape_letter(ft_build_shape(av[1], ft_chk_input(av[1]))));
 		ft_putchar('\n');
 		ft_putstr("func successful\n");
 	}
-	else
+
 	{
 		ft_putstr("failure\n");
 		ft_putchar('\n');
 	}
-	return (0);
+*/	return (0);
 }
 
 

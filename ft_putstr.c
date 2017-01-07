@@ -6,13 +6,13 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 19:40:50 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/04 19:41:52 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/06 17:28:55 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	*ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int		i;
 
