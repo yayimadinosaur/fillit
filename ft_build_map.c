@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:36:08 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/05 17:45:29 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/06 20:21:09 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,8 @@ char	*ft_build_map(char *str, int n)	//n = # of shapes
 }
 
 // input will have no errors because chk_shape checked
+//
+//
+//
+// ^^^^^^^^ function might need to be recoded ^^^^^
+// 			kinda useless since its just str_dup
