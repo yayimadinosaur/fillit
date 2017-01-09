@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:32:00 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/05 17:32:03 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/08 16:08:29 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,7 @@ int		ft_chk_input(char *str)
 		j = 0;		//wrong argument len; not enough or too many
 	return (j);		//if j == 0 argument has errors; else if j > 0 && <= 26 is correct
 }
+
+
+
+// chk input only chks for SIZE, and input chars, does not check shape

@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 19:40:02 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/06 20:43:03 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/08 19:17:27 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,8 @@ char	*ft_shape_letter(char *str, int n)
 	buff[i] = '\0';
 	return (buff);
 }
+
+
+
+
+//MIGHT NEED TO REDO depending on how the fitting into container function goes

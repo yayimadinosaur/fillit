@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_size.c                                      :+:      :+:    :+:   */
+/*   ft_count_shapes.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 20:53:22 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/08 16:15:05 by wfung            ###   ########.fr       */
+/*   Created: 2017/01/08 19:03:38 by wfung             #+#    #+#             */
+/*   Updated: 2017/01/08 19:05:30 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_map_size(char *str, int n)		// not sure if need input shape count
-{											//input shape count could be used as 2d buff size estimator?
+int		ft_count_shapes(char *str)
+{										//perfect string is passed
+	int		i;
+	int		j;
 
+	i = 0;
+	j = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '#')
+			j++;
+		i++;
+	}
+	j = j / 4;							//each shape has 4 #'s
+	return (j);
 }
-
-//		maybe make a function that picks the smallest possible square and 
-//		then move onto printing it?
