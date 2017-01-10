@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 13:06:01 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/09 15:53:54 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/10 08:14:10 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 int		ft_match1(char *str)								//input should be perfect, bottom function shape_match is replaced by this one 
 {
-	int		i;
-	int		j;												//start strcmp index
-	int		k;												//end strcmp index + # counter
+	char	*i;												//start strcmp index
+	char	*j;												//end strcmp index + # counter
 
 	i = 0;
 	j = 0;
 	while (str++)
 	{
-		if (str == '#' && k == 0)
+		if (str == '#' && j == 0)
+			i = str;
+		if (str == '#' && j != 3)
+			j++;
+		if (str == '#' && j == 3)
 		{
 			j = str;
-			k++;
-		}
-		if (str == '#' && k != 0)
-			k++;
-		if (str == '#' && k == 3)
-		{
-			k = i;
-			if (ft_strcmp("####", str[j:k]) == 0)
-				ft_match_all(str[j:k]);
+			ft_match_all([i:j]);							//after getting input str start + end, compare
+			j = 0;
 		}
 	}
+	return (0);												//returns 0 if function fails to find 4 #'s to compare
 }
 
 char	*ft_shape_match(char *str, int count)				//perfect str, 2nd param = shape count
