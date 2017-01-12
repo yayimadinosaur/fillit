@@ -6,13 +6,26 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 13:06:01 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/10 08:14:10 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/11 17:53:49 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_match1(char *str)								//input should be perfect, bottom function shape_match is replaced by this one 
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && n)
+	{
+		i++;
+		n--;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+int		ft_match1(char *str)								//input should be perfect
 {
 	char	*i;												//start strcmp index
 	char	*j;												//end strcmp index + # counter
@@ -27,33 +40,23 @@ int		ft_match1(char *str)								//input should be perfect, bottom function shap
 			j++;
 		if (str == '#' && j == 3)
 		{
-			j = str;
-			ft_match_all([i:j]);							//after getting input str start + end, compare
-			j = 0;
+			j = str;										//end strcmp index
+			i = ft_strncmp("####", j, ft_strlen(j - i));	//cmp strings w/ str start til end vs 19 possible
+			if (i == 0)
+				ft_lstnew(ft_lstadd(i));					//make list for shape, iterate list
+			j = 0;											//reset counter for next if needed
 		}
 	}
-	return (0);												//returns 0 if function fails to find 4 #'s to compare
+	return (0);												//returns 0 if function fails 
 }
 
-char	*ft_shape_match(char *str, int count)				//perfect str, 2nd param = shape count
+int		main(int ac, char **av)
 {
-	int		i;
-	int		j;
-	char	*buff;
-
-	i = 0;
-	j = 0;
-	if (ft_match1(str) == 0 || ft_match2(str) == 0 || ft_match3(str) == 0)
-		return (NULL);										//check if null is available
-	if (!(buff = (char*)malloc(sizeof(char) * (count + 1))))			//make a double pointer for each shape?
-		return (NULL);										//see if null is available
-	while (str[i] != '\0' && count--)						//not sure if count-- is needed
+	if (ac == 2)
 	{
-		i++;
-		j++;
+		printf("cmp result = %i\n", ft_match1(av[1]));
 	}
-	if (count == 0 && str[i] != '\0')
-		ft_bzero(str + i, ft_strlen(str) - i);					//set remaining to '\0', check function if need + 1
-	buff[j] = '\0';
-	return (buff);												//or set value inside char array to null 
+	else
+		printf("wrong # of args\n");
+	return (0);
 }

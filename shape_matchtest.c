@@ -6,14 +6,14 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 08:20:54 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/10 12:10:53 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/11 14:47:22 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdio.h>
 
-int		ft_match1(char *str)								//input should be perfect, bottom function shape_match is replaced by this one 
+int		ft_match1(char *str)								//input should be perfect,
 {
 	char	i;												//start strcmp index
 	char	j;												//end strcmp index + # counter

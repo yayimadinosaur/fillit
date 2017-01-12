@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:10:10 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/06 19:47:58 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/11 17:52:54 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,13 @@ int		main(void)		//example practice to create square exterior
 //
 //>>>>>>>>>>>>>>> LOGIC of program <<<<<<<<<<<<<<
 //
+//   >>>open file??maybe should be 1) use open for fd
 // 1) check input if valid in chk_input
+// 		a)chk input size + # of shapes
+// 		b)chk shape(s)
 // 2) pass return values to build_shape? 
 // 			a) if error, print error message + free whatever?<<<<<<
 // 			b) if valid, shape letter; might not need to malloc, just replace chars
-//
 // 3)match shape
 // 			a)set variations as same
 // 4)create map
@@ -115,4 +117,3 @@ int		main(void)		//example practice to create square exterior
 // 5)print map
 // 6)close files? fd? exit?
 // 7) free stuff?
-// 8)			maybe should be 1) use open for fd
