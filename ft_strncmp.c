@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shape_matchtest.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/10 08:20:54 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/12 20:19:54 by wfung            ###   ########.fr       */
+/*   Created: 2017/01/12 16:34:37 by wfung             #+#    #+#             */
+/*   Updated: 2017/01/12 16:36:10 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_matchx(char *str)								
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	i;												//start strcmp index
-	int		j;												//end strcmp index + # counter
+	size_t	i;
 
-	i = '0';
-	j = 0;
-	while (str++)
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && n)
 	{
-		if (*str == '#' && j == 0)
-		{
-			i = *str;
-			printf("i = %c\n", i);
-		}
-		if (*str == '#' && j < 3)
-		{
-			j++;
-			printf("j = %c\n", j);
-		}
-		if (*str == '#' && j == 3)
-		{
-			j = *str;
-			if (ft_shape_chk(str, i) >= 1)
-				j = 0;
-		}
+		i++;
+		n--;
 	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

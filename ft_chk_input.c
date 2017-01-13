@@ -6,10 +6,68 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:32:00 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/11 17:49:16 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/12 20:19:40 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "fillit.h"
+
+
+int		ft_chk_size(char *str)
+{
+	int		i;
+
+	i = 0;
+	if (str[i] == '\0')
+	{
+		printf("ft_chk_size str = null\n");
+		return (1);
+	}
+	while (str[i] != '\0')
+	{
+		if (str[i] == '.' || str[i] == '#' || str[i] == '\n')
+			i++;
+		else
+		{
+			printf("ft_chk_size input is invalid\n");
+			return (2);
+		}
+	}
+	printf("ft_chk_size passed in size = '%i'\n", i);
+	return (0);
+}
+
+int		ft_chk_input(char *str)
+{
+	int		i;
+	int		j;					// # counter
+	int		k;					// \n counter
+	char	*x;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	if (ft_chk_size(str) != 0)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '.' || str[i] == '#' || str[i] == '\n')
+		{
+			if (str[i] == '#')
+				j++;
+			if (str[i] == '\n')
+				k++;
+			i++;
+		}
+	}
+	printf("[i][j][k] = [%i][%i][%i]\n",i, j, k);
+	x = &str[i];
+	printf("[&i] = [%c]\n", *x + 48);
+	return (1);
+}
+
+
+/*
 int		ft_chk_input(char *str)
 {
 	int		i;		//interate index for string of shapes
@@ -17,25 +75,22 @@ int		ft_chk_input(char *str)
 
 	i = 0;
 	j = 0;			//if j == 0 means no shapes; if j >= 1 && <= 26 limit; if j > 27 error
-	if (!str)
-		j = 0;
+	if (str[i] == '\0')
+		return (j);
 	while (str[i] != '\0')		//chk does not have a limit to check if input overflow
 	{
-		if (str[i] == '.' || str[i] == '#')		//valid input chk
+		if (str[i] == '.' || str[i] == '#')		//chk for valid shapes
 			i++;
-		else if (str[i] == '\n' && (i / 5) >= 1 && (i / 5) <= 26)	//line by line check
+		if (str[i] == '\n' && (i / 5) == 1)	//line by line check
 			i++;
-		else if (str[i] == '\n' && (i / 21) >= 1 && (i / 21) <= 26)	
-		{			//shape chk/counter - every 21 instance
-			i++;
-			j++;	//shape count++
-		}
+		if (str[i] == '\n' && (i / 20) == 1)	
+			j++;												//shape count++
+//		if (str[i] == '\n' && (i / 21) == 1)
+//			i++;
 	}
 	if (i > 130 || (i % j) != 0 || j > 26)
 		j = 0;		//wrong argument len; not enough or too many
+	printf("ft_chk_input finished j = %i\n", j);
 	return (j);		//if j == 0 argument has errors; else if j > 0 && <= 26 is correct
 }
-
-
-
-// chk input only chks for SIZE, and input chars, does not check shape
+*/
