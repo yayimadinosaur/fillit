@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 18:34:45 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/12 19:27:40 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/13 20:24:33 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void		ft_putchar(char c);
 
 int			ft_match1(char *str);
 
-int			ft_shape1(char start);
-int			ft_shape2(char start);
-int			ft_shape_chk(char *str, char start);
+int			ft_shape1(char *start);
+int			ft_shape2(char *start);
+int			ft_shape_chk(char *start);
 
 size_t		ft_strlen(const char *s);
 

@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:32:00 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/12 20:41:36 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/13 20:34:28 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_chk_size(char *str)
 	if (str[i] == '\0')
 	{
 		printf("ft_chk_size str = null\n");
-		return (1);
+		return (0);
 	}
 	while (str[i] != '\0')
 	{
@@ -34,7 +34,7 @@ int		ft_chk_size(char *str)
 		}
 	}
 	printf("ft_chk_size passed in size = '%i'\n", i);
-	return (0);
+	return (1);
 }
 
 int		ft_chk_input(char *str)
@@ -47,7 +47,7 @@ int		ft_chk_input(char *str)
 	i = 0;
 	j = 0;
 	k = 0;
-	if (ft_chk_size(str) != 0)
+	if (ft_chk_size(str) != 1)
 		return (0);
 	while (str[i] != '\0')
 	{
@@ -59,9 +59,14 @@ int		ft_chk_input(char *str)
 				k++;
 			i++;
 		}
+		else
+		{
+			printf("invalid inputs\n");
+			return (0);
+		}
 	}
-	printf("[i][j][k] = [%i][%i][%i]\n",i, j, k);
-	x = &str[i];
+	printf("[i .][j #][k \\n] = [%i][%i][%i]\n",i, j, k);
+	x = &str[i];				//print check that i reached null;
 	printf("[&i] = [%c]\n", *x + 48);
 	return (1);
 }

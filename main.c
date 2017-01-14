@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 18:29:50 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/12 20:19:56 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/13 20:34:33 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,15 @@ int		main(void)
 	char *str;
 
 	str = "####\n....\n....\n....\n";
-	if (ft_chk_input(str) > 0)
-		printf("chk_input passed\n");
-/*		if (ft_chk_input(av[1]) == 0)
-			printf("fail chk_input\n");
-		else if (ft_chk_input(av[1]) > 0)
+	if (ft_chk_input(str) == 1)
+	{
+		printf("main: chk_input passed\n");
+		if (ft_matchx(str) == 1)
 		{
-			printf("valid input shapes = %i\n", ft_chk_input(av[1]));
-			printf("chk_input passed\n");
-			printf("match result = %i\n", ft_matchx(av[1]));
+			printf("matchx passed\n");
 		}
-		*/
-	else if (ft_chk_input(str) == 0)
-		printf("fail chk_input\n");
+	}
+	else
+		printf("main: fail chk_input\n");
 	return (0);
 }
