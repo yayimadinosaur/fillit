@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 08:20:54 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/13 20:34:26 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/15 20:25:41 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int		ft_matchx(char *str)
 				}
 				if (j == 4)
 				{
-					printf("j == 4 start\n");
-					if (ft_shape_chk(c) > 0)
+					printf("matchx matching j = %i\n", j);
+					if (ft_shape_chk(c) == 0)
 					{
-						printf("[j == %i] activate ft_shape_chk\n", j);
-						j = 0;
+						printf("ft_shapechk in matchx failed\n");
+						return (0);
 					}
-					else if (ft_shape_chk(c) == 0)
-						printf("shape_chk failed after matchx\nj == %i\ni == %i\n",i, j);
+					j = 0;
 				}
 			}
+			i++;
 		}
 		if (str[i] != '#' && str[i] != '.' && str[i] != '\n')
 		{
@@ -52,7 +52,6 @@ int		ft_matchx(char *str)
 			printf("i = %i\n", i);
 			return (0);
 		}
-		i++;
 	}
 	return (1);
 }

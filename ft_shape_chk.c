@@ -6,16 +6,19 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 17:36:17 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/13 20:34:31 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/15 20:25:38 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
+#include <string.h>
 int		ft_shape1(char *start)
 {			//start used to be &start
 	if (ft_strncmp("####", start, 4) == 0)
+	{
+		printf("yay1");
 		return (1);
+	}
 	else if (ft_strncmp("#...\n#...\n#...\n#", start, 16) == 0)
 		return (2);
 	else if (ft_strncmp("##..\n##", start, 7) == 0)
@@ -64,9 +67,14 @@ int		ft_shape2(char *start)
 
 int		ft_shape_chk(char *start)
 {
-	int		x;
-
-	x = ft_shape1(start) + ft_shape2(start);
-	printf("%i\n", x);
-	return (x);
+	if (ft_shape1(start) == 0 && ft_shape2(start) == 0)
+	{
+		printf("ft_shape_chk failed!! =(\n");
+		return(0);
+	}
+	else
+	{
+		printf("ft_shape_chk passed! =D\n");
+		return (1);
+	}
 }

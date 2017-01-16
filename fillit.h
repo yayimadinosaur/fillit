@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 18:34:45 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/13 20:24:33 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/15 19:24:34 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_matchx(char *str);
 
 int			ft_chk_input(char *str);
-int			ft_chk_size(char *str);
+int			ft_chk_char(char *str);
+int			ft_chk_count(char *str, int i, int j, int k);
 
 #endif
