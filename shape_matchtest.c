@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 08:20:54 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/15 20:25:41 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/18 18:42:52 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_matchx(char *str)								
 {
-	char	*c;								//start strcmp index
-	int		j;								//end strcmp index + # counter
+	char	*c;			//start strcmp index
+	int		j;			//end strcmp index + # counter
 	int		i;
 						//str[i] was *str
 	i = 0;
@@ -31,7 +31,7 @@ int		ft_matchx(char *str)
 					if (j == 0)
 						c = &str[i];
 					j++;
-					printf("matchx [j = %i]\n", j);
+//					printf("matchx [j = %i]\n", j);
 				}
 				if (j == 4)
 				{

@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:10:10 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/12 17:43:37 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/18 16:41:19 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,8 @@ int		main(void)		//example practice to create square exterior
 		y = 0;
 		x++;
 	}
+*/					//testing creating 2d grid/array
 
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 /*	
 	printf("42 *, 43 +, 44 , 45 -\n");
 	grid[i][j] = '*';
@@ -73,23 +61,7 @@ int		main(void)		//example practice to create square exterior
 		printf("\n");
 		i++;
 	}
-*/
-
-	/*
-	if (ac == 2)
-	{
-		ft_putstr(ft_shape_letter(ft_build_shape(av[1], ft_chk_input(av[1]))));
-		ft_putchar('\n');
-		ft_putstr("func successful\n");
-	}
-
-	{
-		ft_putstr("failure\n");
-		ft_putchar('\n');
-	}
-*/	/*return (0);
-}
-*/
+*/					//testing matching of grid values		
 
 					//build shape == ft_strdup
 
@@ -121,10 +93,12 @@ int		main(void)		//example practice to create square exterior
 //
 //
 //
-// CURRENTLY MADE STUFF
+//	>>>>>					CURRENTLY MADE STUFF			<<<<<
 //
-// ft_chk_input
-//					
-// ft_shapes
+//	1) ft_chk_input
+//		a) ft_chk_char			checks input chars
+//		b) ft_chk_count			checks count of input chars
 //
+//	2) ft_matchx
+//		a) ft_shape_chk			checks each shape of inputs
 //
