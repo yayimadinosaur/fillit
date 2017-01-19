@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:32:00 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/18 20:31:31 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/18 20:33:22 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_chk_count(char *str, int i, int j, int k) // all, #, \n
 	x = i / 21;				//all counted per shape > 1
 //	y = j / 4;				//# counted per shape
 //	z = k / 5;				//\n counted per shape > 1
-	if ((i == 20 && j != 4 && k != 4) || i < 19)
+	if ((i == 20 && j != 4 && k != 4) || i < 20)
 		return (0);
 	if (i > 21)
 	{
