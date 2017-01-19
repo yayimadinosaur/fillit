@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 17:36:17 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/18 18:45:58 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/18 18:58:40 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int		ft_shape2(char *start)
 		printf("yay18\n");
 		return (18);
 	}
-	else if (ft_strncmp("#...\n###", start, 8) == 0)
+	else if (ft_strncmp("###.\n..#", start, 8) == 0)
 	{
 		printf("yay19\n");
 		return (19);
