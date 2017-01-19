@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:32:00 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/18 18:42:31 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/18 20:31:31 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,23 @@ int		ft_chk_count(char *str, int i, int j, int k) // all, #, \n
 	x = i / 21;				//all counted per shape > 1
 //	y = j / 4;				//# counted per shape
 //	z = k / 5;				//\n counted per shape > 1
-	if (i == 20 && j != 4 && k != 4)
+	if ((i == 20 && j != 4 && k != 4) || i < 19)
 		return (0);
-	else if (i > 21 && x >= 2 && x <= 26)
+	if (i > 21)
 	{
-		if (i % 21 != 0 || j % 4 != 0 || k % 5 != 0)
+		printf("[i > 21] i = %i\n", i);
+		if ((i - 20) % 21 != 0 || j % 4 != 0 || (k - 4 ) % 5 != 0)
 		{
-//			printf("chk_count [i] = '%i'[j] = '%i'[k] = '%i'\n", i, j, k);
+			printf("chk_count [i] = '%i'[j] = '%i'[k] = '%i'\n", i, j, k);
 			return (0);
 		}
 	}			//	use strlen to compare vs params?
-	else if (ft_strlen(str) > 546)
+	if (ft_strlen(str) > 546)
+	{
+		printf("[i > 546] i = %i\n", i);
 		return (0);
+	}
+	printf("chk_count passed\n");
 	return (1);
 }
 
