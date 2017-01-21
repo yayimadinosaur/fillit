@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:10:10 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/18 16:41:19 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/20 19:18:39 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,15 @@ int		main(void)		//example practice to create square exterior
 //
 //	2) ft_matchx
 //		a) ft_shape_chk			checks each shape of inputs
-//
+//--------------------------
+//	3) ft_shape_count			counts # of shapes in input
+//	4) ft_convert_shape			converts return of ft_matchx to that specific shape
+//		4a)ft_shape_letter		
+//	5) ft_build_map				builds a map based off of how many pieces input
+//								maybe like a 4x4 per piece? or smaller
+//								a) grows square by +1 x +1 til it can fit it
+//									i) if can fit, ft_packing - returns size of square
+//									ii) if can't fit, increase square by +1 x +1
+//	6) ft_sort_map				if fits from (5), sorts maps by area of perfect square
+//									returns smallest sorted square
+//	7) ft_display				prints/displays result 
