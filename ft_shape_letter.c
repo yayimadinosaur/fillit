@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 19:40:02 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/26 23:22:53 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/27 00:04:11 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 
 char	*ft_shape_letter(char *str, int n)
 {
-	int		i;			//counter for input str (passed str is 100% correct)
+	int		i;			//counter for input str (passed str is perfect)
+	int		j;			//counter for each shape (up to 3)
 	char	c;			//letter assigning for shape
 	char	*buff;		//changed string
 
 	i = 0;
+	j = 0;
 	c = 'A';
 	if (!(buff = (char*)malloc(sizeof(char) * (n + 1))))
 			return ('\0');
-	while (str[i] != '\0' && i < n)		//not sure if n is necessary
+	while (str[i] != '\0')		//not sure if n is necessary
 	{
-		if (str[i] == '#')			//assign letter for tetrimino; every 4 pieces
-			buff[i] = c;
-		if (str[i] == '.' || str[i] == '\n')
-			buff[i] = str[i];		//copy over remaining pieces; . \n
-		if (i / 26 >= 1 && i / 26 <= 26)
-			c++;					//after every shape, increase letter counter
+		if (str[i] == '#')			//assign letter for tetrimino
+		{
+			if (j < 3)
+				j++;
+			else if (j == 3)
+			{
+				c = c + 1;			//increases letter counter every 4 piece
+				j = 0;
+			}
+		}
+		buff[i] = str[i];		//copy pieces
 		i++;
 	}
 	buff[i] = '\0';
