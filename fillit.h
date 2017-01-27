@@ -6,13 +6,13 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 18:34:45 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/15 19:24:34 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/26 23:39:42 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
-# include <stdlib.h>		//malloc free 
+# include <stdlib.h>		//malloc free exit 
 # include <fcntl.h>			//open
 # include <unistd.h>		//close write
 # include <sys/uio.h>		//read
@@ -39,3 +39,5 @@ int			ft_chk_char(char *str);
 int			ft_chk_count(char *str, int i, int j, int k);
 
 #endif
+
+//CANNOT USE NULL

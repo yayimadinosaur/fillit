@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 19:40:02 by wfung             #+#    #+#             */
-/*   Updated: 2017/01/08 19:17:27 by wfung            ###   ########.fr       */
+/*   Updated: 2017/01/26 23:22:53 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_shape_letter(char *str, int n)
 	i = 0;
 	c = 'A';
 	if (!(buff = (char*)malloc(sizeof(char) * (n + 1))))
-			return (NULL);
+			return ('\0');
 	while (str[i] != '\0' && i < n)		//not sure if n is necessary
 	{
 		if (str[i] == '#')			//assign letter for tetrimino; every 4 pieces
@@ -35,8 +35,5 @@ char	*ft_shape_letter(char *str, int n)
 	buff[i] = '\0';
 	return (buff);
 }
-
-
-
 
 //MIGHT NEED TO REDO depending on how the fitting into container function goes
